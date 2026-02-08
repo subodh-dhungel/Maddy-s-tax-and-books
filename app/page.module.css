@@ -156,7 +156,7 @@
     left: 50%;
     width: 0;
     height: 2.5px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #0f0116 0%, #764ba2 100%);
     transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
     transform: translateX(-50%);
     border-radius: 2px;
@@ -168,7 +168,7 @@
 }
 
 .navActive {
-  color: #667eea;
+  color: #ea6666;
   font-weight: 700;
   background: rgba(102, 126, 234, 0.15);
   border-bottom: none;

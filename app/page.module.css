@@ -7,7 +7,7 @@
 }
 
 .header {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(107, 114, 128, 0.7);
   color: var(--foreground);
   padding: 16px 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
@@ -106,9 +106,10 @@
 }
 
 .nav a {
-  color: rgba(0, 0, 0, 0.65);
+  color: #ffffff;
   font-size: 15px;
   font-weight: 600;
+  font-family: var(--font-primary);
   text-decoration: none;
   transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
   padding: 10px 18px;
@@ -127,7 +128,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+  background: rgba(234, 102, 102, 0.2);
   transition: left 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
   z-index: -1;
   border-radius: 8px;
@@ -138,10 +139,10 @@
 }
 
 .nav a:hover {
-  color: #667eea;
-  background: rgba(102, 126, 234, 0.15);
+  color: #ffffff;
+  background: rgba(234, 102, 102, 0.35);
   transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.25);
+  box-shadow: 0 6px 16px rgba(234, 102, 102, 0.3);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -156,7 +157,7 @@
     left: 50%;
     width: 0;
     height: 2.5px;
-    background: linear-gradient(135deg, #0f0116 0%, #764ba2 100%);
+    background: var(--color-secondary);
     transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
     transform: translateX(-50%);
     border-radius: 2px;
@@ -168,13 +169,13 @@
 }
 
 .navActive {
-  color: #ea6666;
+  color: #ffffff;
   font-weight: 700;
-  background: rgba(102, 126, 234, 0.15);
+  background: rgba(234, 102, 102, 0.87);
   border-bottom: none;
   padding-bottom: 10px;
   transition: all 0.2s;
-  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2) inset;
+  box-shadow: 0 0 0 2px rgba(234, 102, 102, 0.3) inset;
 }
 
 .main {
@@ -187,11 +188,157 @@
 }
 
 .hero {
-  margin-bottom: 80px;
+  margin-bottom: 100px;
   position: relative;
   overflow: hidden;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.95) 100%);
   padding: 40px 0;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.hero.animate-in-view {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.heroContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+
+.carouselContainer {
+  position: relative;
+  /* make carousel span full viewport width while staying inside main's flow */
+  width: calc(100% + 96px);
+  max-width: none;
+  left: -48px; /* offset main's horizontal padding (48px) */
+  height: 420px;
+  min-height: 280px;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: none;
+  margin-bottom: 48px; /* gap between carousel and hero */
+}
+
+.carouselWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+}
+
+.carouselItem {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.carouselItemActive {
+  opacity: 1;
+  z-index: 10;
+}
+
+.carouselItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Carousel Navigation Buttons */
+.carouselButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--foreground);
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 20;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-primary);
+}
+
+.carouselButton:first-of-type {
+  left: 16px;
+}
+
+.carouselButton:last-of-type {
+  right: 16px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .carouselButton:hover {
+    background: var(--color-secondary);
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+  }
+}
+
+/* Carousel Indicators */
+.carouselIndicators {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 20;
+}
+
+.carouselIndicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carouselIndicatorActive {
+  background: var(--color-secondary);
+  border-color: var(--color-secondary);
+  transform: scale(1.2);
+}
+
+.heroImage {
+  position: relative;
+  z-index: 11;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  min-height: 400px;
+}
+
+.heroImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
   border-radius: 12px;
 }
 
@@ -253,6 +400,7 @@
   max-width: 800px;
   position: relative;
   z-index: 10;
+  width: 100%;
 }
 
 .heroContent h1 {
@@ -301,16 +449,17 @@
 }
 
 a.primary {
-  background-color: var(--foreground);
-  color: var(--background);
-  border: 2px solid var(--foreground);
+  background-color: var(--color-secondary);
+  color: #ffffff;
+  border: 2px solid rgba(234, 102, 102, 0.95);
 }
 
 @media (hover: hover) and (pointer: fine) {
   a.primary:hover {
-    background-color: rgba(0, 0, 0, 0.9);
-    border-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(234, 102, 102, 0.95);
+    border-color: rgba(200, 80, 80, 0.95);
     transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(234, 102, 102, 0.18);
   }
 }
 
@@ -330,7 +479,13 @@ a.secondary {
 .features {
   background-color: rgba(0, 0, 0, 0.02);
   padding: 80px 24px;
-  margin: 0 -24px -80px -24px;
+  margin: 100px -24px 0 -24px;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.features.animate-in-view {
+  animation: fadeInUp 0.8s ease-out forwards;
 }
 
 .featuresGrid {
@@ -359,6 +514,73 @@ a.secondary {
   font-size: 16px;
   line-height: 1.6;
   color: rgba(0, 0, 0, 0.6);
+}
+
+/* POWERED BY SECTION */
+
+.poweredBySection {
+  margin: 100px 0;
+  padding: 60px 24px;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(107, 114, 128, 0.05) 0%, rgba(107, 114, 128, 0.08) 100%);
+  border-radius: 12px;
+  border: 1px solid rgba(107, 114, 128, 0.1);
+}
+
+.poweredBySection h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: var(--foreground);
+}
+
+.poweredByLogos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.logoItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.roundLogo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.roundLogo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .roundLogo:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.logoItem p {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--foreground);
+  font-family: var(--font-primary);
 }
 
 /* PAGE SECTIONS */
@@ -545,7 +767,7 @@ a.secondary {
 }
 
 .officeHoursBanner {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #667eea 0%, #fd2302b7 100%);
   color: white;
   padding: 24px;
   border-radius: 12px;
@@ -747,7 +969,7 @@ a.secondary {
 
 @media (prefers-color-scheme: dark) {
   .header {
-    background: rgba(26, 26, 26, 0.7);
+    background: rgba(156, 163, 175, 0.7);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
@@ -756,24 +978,24 @@ a.secondary {
   }
 
   .nav a {
-    color: rgba(255, 255, 255, 0.7);
+    color: #ffffff;
     background: rgba(255, 255, 255, 0.05);
   }
 
   .nav a:hover {
-    color: #667eea;
-    background: rgba(102, 126, 234, 0.2);
+    color: #ffffff;
+    background: rgba(234, 102, 102, 0.35);
   }
 
   .nav a::before {
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.25) 0%, rgba(118, 75, 162, 0.25) 100%);
+    background: rgba(234, 102, 102, 0.25);
   }
 
   .navActive {
-    color: #667eea;
+    color: #ffffff;
     font-weight: 700;
-    background: rgba(102, 126, 234, 0.2);
-    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.3) inset;
+    background: rgba(234, 102, 102, 0.3);
+    box-shadow: 0 0 0 2px rgba(234, 102, 102, 0.3) inset;
   }
 
   .hero {
@@ -1070,6 +1292,24 @@ a.secondary {
     padding: 80px 36px 60px 36px;
   }
 
+  .carouselContainer {
+    min-height: 300px;
+  }
+
+  .carouselWrapper {
+    min-height: 300px;
+  }
+
+  .carouselButton {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .heroImage {
+    min-height: 300px;
+  }
+
   .heroContent h1 {
     font-size: 40px;
   }
@@ -1108,6 +1348,24 @@ a.secondary {
     grid-template-columns: 1fr;
     gap: 40px;
     padding: 40px 24px;
+  }
+
+  .poweredBySection {
+    margin: 60px 0;
+    padding: 40px 24px;
+  }
+
+  .poweredByLogos {
+    gap: 40px;
+  }
+
+  .roundLogo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .logoItem p {
+    font-size: 14px;
   }
 }
 
@@ -1151,6 +1409,40 @@ a.secondary {
     padding: 80px 20px 40px 20px;
   }
 
+  .carouselContainer {
+    min-height: 250px;
+    max-width: 100%;
+  }
+
+  .carouselWrapper {
+    min-height: 250px;
+  }
+
+  .carouselButton {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+    left: 8px;
+  }
+
+  .carouselButton:last-of-type {
+    right: 8px;
+  }
+
+  .carouselIndicators {
+    bottom: 12px;
+    gap: 6px;
+  }
+
+  .carouselIndicator {
+    width: 10px;
+    height: 10px;
+  }
+
+  .heroImage {
+    min-height: 250px;
+  }
+
   .heroContent h1 {
     font-size: 28px;
   }
@@ -1178,5 +1470,28 @@ a.secondary {
 
   .industriesGrid {
     grid-template-columns: 1fr;
+  }
+
+  .poweredBySection {
+    margin: 50px 0;
+    padding: 30px 16px;
+  }
+
+  .poweredBySection h2 {
+    font-size: 22px;
+    margin-bottom: 30px;
+  }
+
+  .poweredByLogos {
+    gap: 30px;
+  }
+
+  .roundLogo {
+    width: 90px;
+    height: 90px;
+  }
+
+  .logoItem p {
+    font-size: 13px;
   }
 }

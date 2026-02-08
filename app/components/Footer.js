@@ -62,7 +62,7 @@ export default function Footer() {
       </div>
 
       <div className={styles.footerBottom}>
-        <p>&copy; 2026 Maddy's Tax & Books. Based in NSW, Australia.</p>
+        <p>&copy; 2026 Maddy Tax & Books. Based in NSW, Australia.</p>
       </div>
     </footer>
   );

@@ -47,11 +47,11 @@ export default function Header() {
           <span className={styles.logoWrap}>
             <img
               src="/Maddy%20Tax%20and%20Books%20Logo.jpg"
-              alt="Maddy's Tax & Books"
+              alt="Maddy Tax & Books"
               className={styles.logoImg}
             />
           </span>
-          <span className={styles.logoText}>Maddy's Tax & Books</span>
+          <span className={styles.logoText}>Maddy Tax & Books</span>
         </Link>
 
         <nav className={styles.nav} aria-label="Main navigation">

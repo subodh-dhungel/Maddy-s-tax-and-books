@@ -30,7 +30,7 @@ function AnimatedHero() {
             </p>
             <div className={styles.heroBody}>
               <p>
-                Bookkeeping and tax don't have to be complicated. At Maddy's Tax & Books, we handle the numbers so you can focus on what you do best—growing your business. Whether you're a solo trader, a growing startup, or an established business, we're here to make your accounting simple, transparent, and actually stress-free.
+                Bookkeeping and tax don't have to be complicated. At Maddy Tax & Books, we handle the numbers so you can focus on what you do best—growing your business. Whether you're a solo trader, a growing startup, or an established business, we're here to make your accounting simple, transparent, and actually stress-free.
               </p>
               <p>
                 Powered by Xero, we provide reliable, tailored support that keeps your finances clear and your tax position sorted. No jargon, no surprises, just straightforward advice and solid bookkeeping practices that help you stay on top of your money and plan for what's next.

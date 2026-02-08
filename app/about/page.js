@@ -17,7 +17,7 @@ export default function About() {
 
       <main className={styles.main}>
         <section className={styles.pageHero} ref={heroRef}>
-          <h1>About Maddy's Tax & Books</h1>
+          <h1>About Maddy Tax & Books</h1>
           <p className={styles.pageSubheading}>
             Who we are, what we believe, and why we do what we do
           </p>
@@ -27,7 +27,7 @@ export default function About() {
           <div className={styles.contentBlock} ref={contentRef}>
             <h2>Our Story</h2>
             <p>
-              Maddy's Tax & Books was founded on a simple belief: bookkeeping and tax support shouldn't be complicated, expensive, or impersonal. We started because we saw too many small business owners stressed about their finances, unsure whether they were set up correctly, and worried about tax time.
+              Maddy Tax & Books was founded on a simple belief: bookkeeping and tax support shouldn't be complicated, expensive, or impersonal. We started because we saw too many small business owners stressed about their finances, unsure whether they were set up correctly, and worried about tax time.
             </p>
             <p>
               Today, we work with small businesses, startups, tradies, sole traders, and established companies across NSW. Whatever your size or industry, we're here to make your accounting straightforward and stress-free.
@@ -37,14 +37,14 @@ export default function About() {
           <div className={styles.chairmanSection}>
             <div className={styles.chairmanImage}>
               <img
-                src="/Maddy-chairman.jpg"
+                src="https://advancedtaxbookkeepingsolutions.wordpress.com/wp-content/uploads/2024/10/chairmen.jpg"
                 alt="Maddy, Founder & Chairman"
               />
             </div>
             <div className={styles.chairmanMessage}>
               <h2>A Message From Our Founder</h2>
               <p>
-                When I started Maddy's Tax & Books, I made a promise to myself: to never let another business owner feel lost or overwhelmed by their finances. I've seen too many talented entrepreneurs held back by bookkeeping stress and tax anxiety.
+                When I started Maddy Tax & Books, I made a promise to myself: to never let another business owner feel lost or overwhelmed by their finances. I've seen too many talented entrepreneurs held back by bookkeeping stress and tax anxiety.
               </p>
               <p>
                 My mission is simple: to be the trusted partner every growing business needs. We don't just do your numbers—we help you understand them, plan from them, and grow because of them.

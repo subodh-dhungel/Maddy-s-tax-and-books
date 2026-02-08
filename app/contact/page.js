@@ -24,6 +24,14 @@ export default function Contact() {
 
         <section className={styles.pageContent}>
           <div className={styles.contactContainer} ref={containerRef}>
+            <div className={styles.mapEmbed}>
+              <iframe
+                title="Maddy Tax & Books location"
+                src="https://maps.google.com/maps?q=-33.76764192170687,150.7845505510136&z=15&output=embed"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
             <div className={styles.contactForm}>
               <h2>Send us a message</h2>
               <div className={styles.officeHoursBanner}>

@@ -9,15 +9,15 @@ export default function Carousel() {
   const slides = [
     {
       image: "/maddyHero.png",
-      alt: "Maddy's Tax & Books - Professional bookkeeping",
+      alt: "Maddy Tax & Books - Professional bookkeeping",
     },
     {
       image: "/maddyHero.png",
-      alt: "Maddy's Tax & Books - Tax services",
+      alt: "Maddy Tax & Books - Tax services",
     },
     {
       image: "/maddyHero.png",
-      alt: "Maddy's Tax & Books - Financial clarity",
+      alt: "Maddy Tax & Books - Financial clarity",
     },
   ];
 

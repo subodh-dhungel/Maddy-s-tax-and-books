@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Maddy's Tax & Books | Bookkeeping & Tax for NSW Businesses",
+  title: "Maddy Tax & Books | Bookkeeping & Tax for NSW Businesses",
   description: "Expert bookkeeping and tax services for small businesses, startups, sole traders, and service-based businesses in NSW. Powered by Xero.",
 };
 

@@ -6,7 +6,7 @@
   --color-primary: #6b7280; /* grey (primary) */
   --color-secondary: #ea6666; /* red (secondary) */
   --font-primary: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif; /* headings */
-  --font-secondary: 'JetBrains Mono', 'Courier New', monospace; /* paragraphs */
+  --font-secondary: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {

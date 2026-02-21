@@ -1,6 +1,7 @@
 "use client";
 
 import styles from "../page.module.css";
+import ServiceIcon from "../components/ServiceIcon";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
@@ -64,25 +65,25 @@ export default function About() {
             <div className={styles.valuesGrid}>
               <div className="animate-in-view staggered" style={{ animation: 'none' }}>
                 <div className={styles.valueCard}>
-                  <h3>Reliability & Trust</h3>
+                  <h3 className={styles.valueTitle}><ServiceIcon name="reliability" className={styles.valueIcon} />Reliability & Trust</h3>
                   <p>You can count on us to get your numbers right, every single time.</p>
                 </div>
               </div>
               <div className="animate-in-view staggered" style={{ animation: 'none' }}>
                 <div className={styles.valueCard}>
-                  <h3>Complete Transparency</h3>
+                  <h3 className={styles.valueTitle}><ServiceIcon name="transparency" className={styles.valueIcon} />Complete Transparency</h3>
                   <p>No hidden fees, no jargon, no surprises. You always know where you stand.</p>
                 </div>
               </div>
               <div className="animate-in-view staggered" style={{ animation: 'none' }}>
                 <div className={styles.valueCard}>
-                  <h3>Stress-Free Support</h3>
+                  <h3 className={styles.valueTitle}><ServiceIcon name="support" className={styles.valueIcon} />Stress-Free Support</h3>
                   <p>We handle the complexity so you can focus on what you do best.</p>
                 </div>
               </div>
               <div className="animate-in-view staggered" style={{ animation: 'none' }}>
                 <div className={styles.valueCard}>
-                  <h3>Built for Growth</h3>
+                  <h3 className={styles.valueTitle}><ServiceIcon name="growth" className={styles.valueIcon} />Built for Growth</h3>
                   <p>Whether scaling or steady, we help you plan ahead and stay prepared.</p>
                 </div>
               </div>

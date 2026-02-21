@@ -4,11 +4,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState, useRef } from "react";
 import styles from "../page.module.css";
+import ServiceIcon from "./ServiceIcon";
 
 export default function Header() {
   const pathname = usePathname();
   const [loading, setLoading] = useState(false);
   const timeoutRef = useRef();
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     // When pathname changes, stop loading
@@ -54,12 +56,34 @@ export default function Header() {
           <span className={styles.logoText}>Maddy Tax & Books</span>
         </Link>
 
-        <nav className={styles.nav} aria-label="Main navigation">
-          <Link href="/" onClick={handleNavClick} className={isActive('/') ? styles.navActive : ''}>Home</Link>
-          <Link href="/about" onClick={handleNavClick} className={isActive('/about') ? styles.navActive : ''}>About</Link>
-          <Link href="/services" onClick={handleNavClick} className={isActive('/services') ? styles.navActive : ''}>Services</Link>
-          <Link href="/industries" onClick={handleNavClick} className={isActive('/industries') ? styles.navActive : ''}>Industries</Link>
-          <Link href="/contact" onClick={handleNavClick} className={isActive('/contact') ? styles.navActive : ''}>Contact</Link>
+        <button
+          type="button"
+          className={`${styles.hamburger} ${mobileOpen ? styles.hamburgerOpen : ''}`}
+          aria-label="Toggle menu"
+          aria-expanded={mobileOpen}
+          onClick={() => setMobileOpen((s) => !s)}
+        >
+          <span className={styles.hamburgerLine} />
+          <span className={styles.hamburgerLine} />
+          <span className={styles.hamburgerLine} />
+        </button>
+
+        <nav className={`${styles.nav} ${mobileOpen ? styles.navOpen : ''}`} aria-label="Main navigation">
+          <Link href="/" onClick={() => { handleNavClick(); setMobileOpen(false); }} className={isActive('/') ? styles.navActive : ''}>
+            <ServiceIcon name="home" className={styles.navIcon} />Home
+          </Link>
+          <Link href="/about" onClick={() => { handleNavClick(); setMobileOpen(false); }} className={isActive('/about') ? styles.navActive : ''}>
+            <ServiceIcon name="about" className={styles.navIcon} />About
+          </Link>
+          <Link href="/services" onClick={() => { handleNavClick(); setMobileOpen(false); }} className={isActive('/services') ? styles.navActive : ''}>
+            <ServiceIcon name="services" className={styles.navIcon} />Services
+          </Link>
+          <Link href="/industries" onClick={() => { handleNavClick(); setMobileOpen(false); }} className={isActive('/industries') ? styles.navActive : ''}>
+            <ServiceIcon name="industries" className={styles.navIcon} />Industries
+          </Link>
+          <Link href="/contact" onClick={() => { handleNavClick(); setMobileOpen(false); }} className={isActive('/contact') ? styles.navActive : ''}>
+            <ServiceIcon name="contact" className={styles.navIcon} />Contact
+          </Link>
         </nav>
       </div>
 

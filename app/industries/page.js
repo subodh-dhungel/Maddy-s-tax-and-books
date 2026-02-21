@@ -4,6 +4,7 @@ import styles from "../page.module.css";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import ServiceIcon from "../components/ServiceIcon";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 export default function Industries() {
@@ -32,7 +33,7 @@ export default function Industries() {
           <div className={styles.industriesGrid} ref={industriesRef}>
             <div className="animate-in-view staggered" style={{ animation: 'none' }}>
               <div className={styles.industryCard}>
-                <h3>Tradies & Construction</h3>
+                <h3 className={styles.industryTitle}><ServiceIcon name="tradies" className={styles.industryIcon} /> Tradies & Construction</h3>
                 <p>
                   From plumbers to builders, we understand the complexities of trades: invoicing, subcontractor payments, job costing, and seasonal cash flow. We keep your numbers clear so you can focus on the work.
                 </p>
@@ -41,7 +42,7 @@ export default function Industries() {
 
             <div className="animate-in-view staggered" style={{ animation: 'none' }}>
               <div className={styles.industryCard}>
-                <h3>Sole Traders</h3>
+                <h3 className={styles.industryTitle}><ServiceIcon name="soletrader" className={styles.industryIcon} /> Sole Traders</h3>
                 <p>
                   Solo business owners need lean, efficient support. We handle your bookkeeping and tax so you can concentrate on building your business and growing your income.
                 </p>
@@ -50,7 +51,7 @@ export default function Industries() {
 
             <div className="animate-in-view staggered" style={{ animation: 'none' }}>
               <div className={styles.industryCard}>
-                <h3>Professional Services</h3>
+                <h3 className={styles.industryTitle}><ServiceIcon name="professional" className={styles.industryIcon} /> Professional Services</h3>
                 <p>
                   Consultants, accountants, designers, and agencies: we manage your time tracking, project-based invoicing, and complex income structures to keep your finances clear.
                 </p>
@@ -59,7 +60,7 @@ export default function Industries() {
 
             <div className="animate-in-view staggered" style={{ animation: 'none' }}>
               <div className={styles.industryCard}>
-                <h3>Retail & E-Commerce</h3>
+                <h3 className={styles.industryTitle}><ServiceIcon name="retail" className={styles.industryIcon} /> Retail & E-Commerce</h3>
                 <p>
                   Whether you're online or offline, we track sales, inventory, expenses, and GST. We help you understand what's working and what's costing you money.
                 </p>
@@ -68,7 +69,7 @@ export default function Industries() {
 
             <div className="animate-in-view staggered" style={{ animation: 'none' }}>
               <div className={styles.industryCard}>
-                <h3>Hospitality & Food Service</h3>
+                <h3 className={styles.industryTitle}><ServiceIcon name="hospitality" className={styles.industryIcon} /> Hospitality & Food Service</h3>
                 <p>
                   Restaurants, cafes, and bars have unique challenges: staff costs, inventory, GST, and seasonal fluctuations. We're experienced in hospitality bookkeeping and can advise on cash handling and stock management.
                 </p>
@@ -77,7 +78,7 @@ export default function Industries() {
 
             <div className="animate-in-view staggered" style={{ animation: 'none' }}>
               <div className={styles.industryCard}>
-                <h3>Healthcare & Wellness</h3>
+                <h3 className={styles.industryTitle}><ServiceIcon name="healthcare" className={styles.industryIcon} /> Healthcare & Wellness</h3>
                 <p>
                   Private practitioners, clinics, and wellness businesses often need specialized invoicing and tax guidance. We understand your industry and help you stay compliant.
                 </p>
@@ -86,25 +87,25 @@ export default function Industries() {
 
             <div className="animate-in-view staggered" style={{ animation: 'none' }}>
               <div className={styles.industryCard}>
-                <h3>Real Estate & Property</h3>
+                <h3 className={styles.industryTitle}><ServiceIcon name="realestate" className={styles.industryIcon} /> Real Estate & Property</h3>
                 <p>
                   If you manage rental properties or work in real estate, we handle depreciation schedules, deductible expenses, investment property reporting, and landlord tax obligations.
                 </p>
               </div>
             </div>
 
-            <div className="animate-in-view staggered" style={{ animation: 'none' }}>
+              <div className="animate-in-view staggered" style={{ animation: 'none' }}>
               <div className={styles.industryCard}>
-                <h3>Startups & Growing Businesses</h3>
+                <h3 className={styles.industryTitle}><ServiceIcon name="startup" className={styles.industryIcon} /> Startups & Growing Businesses</h3>
                 <p>
                   You're focused on growth—we'll handle the books. Scalable bookkeeping that grows with you, from launch through rapid expansion and beyond.
                 </p>
               </div>
             </div>
 
-            <div className="animate-in-view staggered" style={{ animation: 'none' }}>
+              <div className="animate-in-view staggered" style={{ animation: 'none' }}>
               <div className={styles.industryCard}>
-                <h3>Not-for-Profit & Charities</h3>
+                <h3 className={styles.industryTitle}><ServiceIcon name="notforprofit" className={styles.industryIcon} /> Not-for-Profit & Charities</h3>
                 <p>
                   Non-profits have unique accounting and tax requirements. We help you manage grants, donations, compliance, and financial transparency.
                 </p>
